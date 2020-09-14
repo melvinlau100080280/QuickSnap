@@ -1,5 +1,6 @@
 ﻿using System;
 using SwinGameSDK;
+using System.Media;
 
 #if DEBUG
 using NUnit.Framework;
@@ -140,6 +141,11 @@ namespace CardGames.GameLogic
 				_score[player]++;
 				//TODO: consider playing a sound here...
 			}
+            
+            else if ( player >= 0 && player < _score.Length)
+            {
+                _score[player]--;
+            }
 
 			// stop the game...
 			_started = false;
